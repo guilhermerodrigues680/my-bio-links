@@ -1,12 +1,14 @@
 import { useState } from "react";
 import logo from "./assets/images/logo.svg";
 import styles from "./App.module.css";
+import { Button3d } from "./components";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className={styles["App"]}>
+      <Button3d />
       <header className={styles["App-header"]}>
         <img src={logo} className={styles["App-logo"]} alt="logo" />
         <p>Hello Vite + React!</p>
