@@ -2,6 +2,9 @@ import { useState } from "react";
 import avatar from "./assets/images/avatar.jpeg";
 import styles from "./App.module.css";
 import { Button3d, BackdropLoading } from "./components";
+import { attributes } from "../cms-data/bio-links.md";
+
+console.log(attributes);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
