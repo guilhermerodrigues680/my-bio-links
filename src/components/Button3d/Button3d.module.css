@@ -10,6 +10,24 @@ button.button-3d {
   font-weight: 700;
   color: white;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
+@media not all and (hover: none) {
+  button.button-3d:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.25)
+      ),
+      var(--btn-color);
+  }
+}
+
+button.button-3d:active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    var(--btn-color);
 }
 
 button.button-3d::before {
