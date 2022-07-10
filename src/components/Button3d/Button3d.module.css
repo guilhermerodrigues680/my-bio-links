@@ -58,3 +58,9 @@ a.button-3d::after {
   border: 1px solid black;
   transform: matrix(0.82, 0, 1, 1, 0, 0);
 }
+
+a.button-3d > img {
+  width: 24px;
+  height: auto;
+  padding-right: 0.25rem;
+}

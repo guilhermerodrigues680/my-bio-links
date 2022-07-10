@@ -17,6 +17,7 @@ function Button3d({ children, href, icon, color, onClick }) {
       target="_blank"
       rel="noreferrer"
     >
+      {icon && <img alt="icone" src={icon} />}
       {children}
     </a>
   );
