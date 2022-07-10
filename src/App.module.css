@@ -8,15 +8,19 @@
   background: #ddd;
   border: 1px solid #000;
   box-shadow: 6px 12px 0px #000;
+  user-select: none;
 }
 
 .app-header {
   background-color: #ffc115;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0 5rem 0;
 }
 
 .app-header__name {
