@@ -4,10 +4,23 @@ import styles from "./App.module.css";
 import { Button3d, BackdropLoading } from "./components";
 import { attributes } from "../cms-data/bio-links.md";
 
-console.log(attributes);
+console.log(attributes.links);
+
+function getColor(anyNumber = 0) {
+  if (typeof anyNumber !== "number") {
+    throw new Error("parameter is not a number");
+  }
+  const buttonColors = ["#7551E8", "#EC61D0", "#38E19C", "#0CAFFE", "#F33634"];
+  return buttonColors[(anyNumber ?? 0) % buttonColors.length];
+}
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const links = attributes.links;
+
+  function handleClick() {
+    console.debug("click");
+  }
 
   return (
     <div className={styles["app"]}>
@@ -23,21 +36,20 @@ function App() {
         <p className={styles["app-header__name"]}>Guilherme Rodrigues</p>
 
         <ul className={styles["app-links"]}>
-          <li>
-            <Button3d color="#7551E8">Botao 1</Button3d>
-          </li>
-          <li>
-            <Button3d color="#EC61D0">Botao 2</Button3d>
-          </li>
-          <li>
-            <Button3d color="#38E19C">Botao 3</Button3d>
-          </li>
-          <li>
-            <Button3d color="#0CAFFE">Botao 4</Button3d>
-          </li>
-          <li>
-            <Button3d color="#F33634">Botao 5</Button3d>
-          </li>
+          {links
+            .filter((link) => link.isenabled)
+            .map((link, idx) => (
+              <li key={`${link.name}-${link.href}`}>
+                <Button3d
+                  href={link.href}
+                  icon={link.icon}
+                  color={getColor(idx)}
+                  onClick={handleClick}
+                >
+                  {link.name}
+                </Button3d>
+              </li>
+            ))}
         </ul>
       </header>
 

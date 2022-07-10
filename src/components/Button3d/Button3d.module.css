@@ -1,9 +1,11 @@
-button.button-3d {
+a.button-3d {
   margin: 0 1.5rem 0 0;
   width: 325px;
   height: 49px;
   background: var(--btn-color);
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border: 1px solid black;
   font-size: 1rem;
@@ -11,11 +13,13 @@ button.button-3d {
   color: white;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  text-align: center;
   -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 @media not all and (hover: none) {
-  button.button-3d:hover {
+  a.button-3d:hover {
     background: linear-gradient(
         0deg,
         rgba(255, 255, 255, 0.25),
@@ -25,12 +29,12 @@ button.button-3d {
   }
 }
 
-button.button-3d:active {
+a.button-3d:active {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
     var(--btn-color);
 }
 
-button.button-3d::before {
+a.button-3d::before {
   content: "";
   position: absolute;
   top: 6px;
@@ -43,7 +47,7 @@ button.button-3d::before {
   transform: matrix(1, 1.01, 0, 0.81, 0, 0);
 }
 
-button.button-3d::after {
+a.button-3d::after {
   content: "";
   position: absolute;
   background: #000;

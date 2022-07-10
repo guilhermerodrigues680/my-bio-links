@@ -7,15 +7,18 @@ import styles from "./Button3d.module.css";
 // #0CAFFE
 // #F33634
 
-function Button3d({ children, color }) {
+function Button3d({ children, href, icon, color, onClick }) {
   return (
-    <button
+    <a
       className={styles["button-3d"]}
       style={{ "--btn-color": color }}
-      type="button"
+      href={href}
+      onClick={onClick}
+      target="_blank"
+      rel="noreferrer"
     >
       {children}
-    </button>
+    </a>
   );
 }
 
