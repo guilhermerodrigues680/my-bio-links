@@ -14,6 +14,9 @@ cd dist
 # if you are deploying to a custom domain
 echo 'bio.guiodev.com' > CNAME
 
+# Turn off jekyll
+echo '' > .nojekyll
+
 git init
 git checkout -b main
 git add -A
