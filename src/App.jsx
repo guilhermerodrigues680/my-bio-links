@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "./assets/images/logo.svg";
+import avatar from "./assets/images/avatar.jpeg";
 import styles from "./App.module.css";
 import { Button3d } from "./components";
 
@@ -8,10 +8,14 @@ function App() {
 
   return (
     <div className={styles["app"]}>
-      <header className={styles["app-header"]}>
-        <img src={logo} className={styles["app-logo"]} alt="logo" />
+      <header>
+        <img
+          src={avatar}
+          className={styles["app-logo"]}
+          alt="avatar de Guilherme Rodrigues"
+        />
 
-        <p className={styles["app-header__name"]}>João da Silva</p>
+        <p className={styles["app-header__name"]}>Guilherme Rodrigues</p>
 
         <ul className={styles["app-links"]}>
           <li>
@@ -31,6 +35,13 @@ function App() {
           </li>
         </ul>
       </header>
+
+      <footer>
+        Um projeto de&nbsp;
+        <a href="https://github.com/guilhermerodrigues680">
+          guilhermerodrigues680
+        </a>
+      </footer>
     </div>
   );
 }

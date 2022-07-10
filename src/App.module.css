@@ -1,4 +1,8 @@
 .app {
+  background-color: #ffc115;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
 }
 
 .app-logo {
@@ -11,16 +15,12 @@
   user-select: none;
 }
 
-.app-header {
-  background-color: #ffc115;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
+.app header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0 5rem 0;
+  padding: 2rem 0 2rem 0;
 }
 
 .app-header__name {
@@ -36,4 +36,18 @@
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+}
+
+.app footer {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.app footer a {
+  color: #303030;
+}
+
+.app footer a:hover {
+  color: #0d00bf;
 }
