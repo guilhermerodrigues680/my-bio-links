@@ -4,41 +4,32 @@ import styles from "./App.module.css";
 import { Button3d } from "./components";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className={styles["App"]}>
-      <Button3d />
-      <header className={styles["App-header"]}>
-        <img src={logo} className={styles["App-logo"]} alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className={styles["App-link"]}
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className={styles["App-link"]}
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+    <div className={styles["app"]}>
+      <header className={styles["app-header"]}>
+        <img src={logo} className={styles["app-logo"]} alt="logo" />
+
+        <p className={styles["app-header__name"]}>João da Silva</p>
+
+        <ul className={styles["app-links"]}>
+          <li>
+            <Button3d color="#7551E8">Botao 1</Button3d>
+          </li>
+          <li>
+            <Button3d color="#EC61D0">Botao 2</Button3d>
+          </li>
+          <li>
+            <Button3d color="#38E19C">Botao 3</Button3d>
+          </li>
+          <li>
+            <Button3d color="#0CAFFE">Botao 4</Button3d>
+          </li>
+          <li>
+            <Button3d color="#F33634">Botao 5</Button3d>
+          </li>
+        </ul>
       </header>
     </div>
   );
