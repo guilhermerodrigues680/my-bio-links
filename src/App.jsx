@@ -1,10 +1,9 @@
 import { useState } from "react";
-import avatar from "./assets/images/avatar.jpeg";
 import styles from "./App.module.css";
 import { Button3d, BackdropLoading } from "./components";
 import { attributes } from "../cms-data/bio-links.md";
 
-console.log(attributes.links);
+// console.debug(attributes);
 
 function getColor(anyNumber = 0) {
   if (typeof anyNumber !== "number") {
@@ -16,10 +15,11 @@ function getColor(anyNumber = 0) {
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const links = attributes.links;
+  const { links, avatar } = attributes;
 
   function handleClick() {
-    console.debug("click");
+    setIsLoading(true);
+    setTimeout(() => setIsLoading(false), 1250);
   }
 
   return (
@@ -28,12 +28,12 @@ function App() {
 
       <header>
         <img
-          src={avatar}
+          src={avatar.url}
           className={styles["app-logo"]}
           alt="avatar de Guilherme Rodrigues"
         />
 
-        <p className={styles["app-header__name"]}>Guilherme Rodrigues</p>
+        <p className={styles["app-header__name"]}>{avatar.name}</p>
 
         <ul className={styles["app-links"]}>
           {links
@@ -55,7 +55,11 @@ function App() {
 
       <footer>
         Um projeto de&nbsp;
-        <a href="https://github.com/guilhermerodrigues680">
+        <a
+          href="https://github.com/guilhermerodrigues680"
+          target="_blank"
+          rel="noreferrer"
+        >
           guilhermerodrigues680
         </a>
       </footer>
