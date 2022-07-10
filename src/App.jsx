@@ -56,7 +56,7 @@ function App() {
       <footer>
         Um projeto de&nbsp;
         <a
-          href="https://github.com/guilhermerodrigues680"
+          href="https://github.com/guilhermerodrigues680/my-bio-links"
           target="_blank"
           rel="noreferrer"
         >
