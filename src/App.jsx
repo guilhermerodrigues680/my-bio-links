@@ -1,13 +1,15 @@
 import { useState } from "react";
 import avatar from "./assets/images/avatar.jpeg";
 import styles from "./App.module.css";
-import { Button3d } from "./components";
+import { Button3d, BackdropLoading } from "./components";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className={styles["app"]}>
+      <BackdropLoading show={isLoading} />
+
       <header>
         <img
           src={avatar}
